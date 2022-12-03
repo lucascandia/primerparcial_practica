@@ -14,7 +14,7 @@ public class TestPersonaDAO {
 		ClienteDAO pdao = new ClienteDAO();
 		
 		
-		pdao.insertar(new Cliente(500L, "Familiar", "25.5") );
+		pdao.insertar(new Cliente(500L, "Familiar", "dolar", "15","10") );
 		/*pdao.insertar(new Persona(201L,"Juan", "Lopez") );
 		pdao.insertar(new Persona(202L,"Ana", "Iturbe") );
 		pdao.insertar(new Persona(203L,"Jose", "Gomez") );
@@ -30,7 +30,7 @@ public class TestPersonaDAO {
 		
 		
 		for (Cliente p: lista){
-			System.out.println(p.getIdcliente() + " " + p.getCliente() + " " + p.getCotizacion());
+			System.out.println(p.getIdcliente() + " " + p.getCliente() + " " + p.getMoneda() + " " + p.getValor_compra() + " " + p.getValor_venta());
 		}
 	}
 	

@@ -40,7 +40,10 @@ public class ClienteJSON {
 		JSONObject obj = new JSONObject();
         obj.put("idcliente", p.getIdcliente());
         obj.put("cliente", p.getCliente());
-        obj.put("cotizacion", p.getCotizacion());
+        obj.put("moneda", p.getMoneda());
+        obj.put("valor_compra", p.getValor_compra());
+        obj.put("valor_venta", p.getValor_venta());
+
 
         /*JSONArray list = new JSONArray();
         
@@ -66,7 +69,9 @@ public class ClienteJSON {
         Long idcliente = (Long) jsonObject.get("idcliente");
         p.setIdcliente(idcliente);
         p.setCliente((String)jsonObject.get("cliente"));
-        p.setCotizacion((String)jsonObject.get("cotizacion"));
+        p.setMoneda((String)jsonObject.get("moneda"));
+        p.setValor_compra((String)jsonObject.get("valor_compra"));
+        p.setValor_venta((String)jsonObject.get("valor_venta"));
         
        /* JSONArray msg = (JSONArray) jsonObject.get("asignaturas");
         Iterator<String> iterator = msg.iterator();

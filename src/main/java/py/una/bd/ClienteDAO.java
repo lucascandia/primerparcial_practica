@@ -19,7 +19,7 @@ public class ClienteDAO {
 	 * @return
 	 */
 	public List<Cliente> seleccionar() {
-		String query = "SELECT idcliente, cliente, cotizacion FROM cliente ";
+		String query = "SELECT idcliente, cliente, moneda, valor_compra, valor_venta FROM cliente ";
 		
 		List<Cliente> lista = new ArrayList<Cliente>();
 		
@@ -33,7 +33,9 @@ public class ClienteDAO {
         		Cliente p = new Cliente();
         		p.setIdcliente(rs.getLong(1));
         		p.setCliente(rs.getString(2));
-        		p.setCotizacion(rs.getString(3));
+        		p.setMoneda(rs.getString(3));
+                p.setValor_compra(rs.getString(4));
+                p.setValor_venta(rs.getString(5));
 
         		lista.add(p);
         	}
@@ -91,8 +93,8 @@ public class ClienteDAO {
 	
     public long insertar(Cliente p) throws SQLException {
 
-        String SQL = "INSERT INTO cliente(idcliente, cliente, cotizacion) "
-                + "VALUES(?,?,?)";
+        String SQL = "INSERT INTO cliente(idcliente, cliente, moneda, valor_compra, valor_venta) "
+                + "VALUES(?,?,?,?,?)";
  
         long id = 1;
         Connection conn = null;
@@ -104,7 +106,9 @@ public class ClienteDAO {
             //pstmt.setLong(1, p.getCedula());
             pstmt.setLong(1, p.getIdcliente());
             pstmt.setString(2, p.getCliente());
-            pstmt.setString(3, p.getCotizacion());
+            pstmt.setString(3, p.getMoneda());
+            pstmt.setString(4, p.getValor_compra());
+            pstmt.setString(5, p.getValor_venta());
             int affectedRows = pstmt.executeUpdate();
             // check the affected rows 
             if (affectedRows > 0) {

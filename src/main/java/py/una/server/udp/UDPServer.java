@@ -54,7 +54,7 @@ public class UDPServer {
                 int port = receivePacket.getPort();
 
                 System.out.println("De : " + IPAddress + ":" + port);
-                System.out.println("Cliente Recibido : "+ p.getIdcliente()+ "  " + p.getCliente() + " " + p.getCotizacion());
+                System.out.println("Cliente Recibido : "+ p.getIdcliente()+ "  " + p.getCliente() + " " + p.getMoneda() + " " + p.getValor_compra() + " " + p.getValor_venta());
                 
                 try {
                 	pdao.insertar(p);

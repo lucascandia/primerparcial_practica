@@ -6,15 +6,21 @@ public class Cliente {
 
 	Long idcliente;
 	String cliente;
-	String cotizacion;
+	String moneda;
+	String valor_compra;
+	String valor_venta;
 
-	public Cliente(Long idcliente, String cliente, String cotizacion) {
-		this.idcliente = idcliente;
-		this.cliente = cliente;
-		this.cotizacion = cotizacion;
-	}
+
 
 	public Cliente() {
+	}
+
+	public Cliente(Long idcliente, String cliente, String moneda, String valor_compra, String valor_venta) {
+		this.idcliente = idcliente;
+		this.cliente = cliente;
+		this.moneda = moneda;
+		this.valor_compra = valor_compra;
+		this.valor_venta = valor_venta;
 	}
 
 	public Long getIdcliente() {
@@ -33,20 +39,38 @@ public class Cliente {
 		this.cliente = cliente;
 	}
 
-	public String getCotizacion() {
-		return cotizacion;
+	public String getMoneda() {
+		return moneda;
 	}
 
-	public void setCotizacion(String cotizacion) {
-		this.cotizacion = cotizacion;
+	public void setMoneda(String moneda) {
+		this.moneda = moneda;
+	}
+
+	public String getValor_compra() {
+		return valor_compra;
+	}
+
+	public void setValor_compra(String valor_compra) {
+		this.valor_compra = valor_compra;
+	}
+
+	public String getValor_venta() {
+		return valor_venta;
+	}
+
+	public void setValor_venta(String valor_venta) {
+		this.valor_venta = valor_venta;
 	}
 
 	@Override
 	public String toString() {
 		return "Cliente{" +
-				"id=" + idcliente +
+				"idcliente=" + idcliente +
 				", cliente='" + cliente + '\'' +
-				", cotizacion=" + cotizacion +
+				", moneda='" + moneda + '\'' +
+				", valor_compra='" + valor_compra + '\'' +
+				", valor_venta='" + valor_venta + '\'' +
 				'}';
 	}
 }

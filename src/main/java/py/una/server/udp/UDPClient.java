@@ -38,10 +38,15 @@ class UDPClient {
             Long id = Long.valueOf(inFromUser.readLine());
             System.out.print("Ingrese el nombre de cliente(Banco/Entidad): ");
             String cliente = inFromUser.readLine();
-            System.out.print("Ingrese la cotizacion: ");
-            String cotizacion = inFromUser.readLine();
+            System.out.print("Ingrese la moneda: ");
+            String moneda = inFromUser.readLine();
+            System.out.print("Ingrese la valor_compra: ");
+            String valor_compra = inFromUser.readLine();
+            System.out.print("Ingrese la valor_venta: ");
+            String valor_venta = inFromUser.readLine();
+
             
-            Cliente p = new Cliente(id,  cliente, cotizacion);
+            Cliente p = new Cliente(id,  cliente, moneda, valor_compra, valor_venta);
             
             String datoPaquete = ClienteJSON.objetoString(p);
             sendData = datoPaquete.getBytes();

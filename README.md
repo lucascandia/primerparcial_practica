@@ -1,4 +1,5 @@
-# primerparcial_practica
+
+#se hicieron los ajuste necesario para adaptar al primer final
 Examen practico.
 ## Autor: Lucas Candia
 # Carpeta BD
